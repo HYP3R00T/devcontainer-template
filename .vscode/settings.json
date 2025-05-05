@@ -1,0 +1,28 @@
+{
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": "./.github/prompt/codeGeneration.md"
+        }
+    ],
+    "github.copilot.chat.testGeneration.instructions": [
+        {
+            "file": "./.github/prompt/testGeneration.md"
+        }
+    ],
+    "github.copilot.chat.reviewSelection.instructions": [
+        {
+            "file": "./.github/prompt/codeReview.md"
+        }
+    ],
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": "./.github/prompt/commitMessageGeneration.md"
+        }
+    ],
+    "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+        {
+            "file": "./.github/prompt/pullRequestDescriptionGeneration.md"
+        }
+    ],
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}
