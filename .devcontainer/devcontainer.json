@@ -1,0 +1,14 @@
+{
+    "name": "DevContainer Template",
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // "ms-python.python",
+                // "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/scripts/setup.sh"
+}
