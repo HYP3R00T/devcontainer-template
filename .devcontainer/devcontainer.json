@@ -1,14 +1,21 @@
 {
-    "name": "DevContainer Template",
-    "image": "mcr.microsoft.com/devcontainers/universal:latest",
-    "features": {},
+    "name": "devcontainer-template",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "postCreateCommand": "scripts/setup.sh",
+    "containerEnv": {
+        "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
-                // "ms-python.python",
-                // "ms-python.vscode-pylance"
+                "tamasfe.even-better-toml",
+                "christian-kohler.path-intellisense",
+                "redhat.vscode-yaml",
+                "hverlin.mise-vscode"
             ]
         }
-    },
-    "postCreateCommand": "bash .devcontainer/scripts/setup.sh"
+    }
 }
