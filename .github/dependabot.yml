@@ -1,0 +1,74 @@
+# Dependabot configuration for automated dependency updates
+# See https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates
+
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # Uncomment and configure for your project's language/package manager
+  # Examples below - choose what applies to your project
+
+  # Python (pip)
+  # - package-ecosystem: "pip"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "03:00"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "dependencies"
+  #   commit-message:
+  #     prefix: "chore(deps)"
+
+  # Node.js (npm/yarn)
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "03:00"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "dependencies"
+  #   commit-message:
+  #     prefix: "chore(deps)"
+
+  # Go (go modules)
+  # - package-ecosystem: "gomod"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "03:00"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "dependencies"
+  #   commit-message:
+  #     prefix: "chore(deps)"
+
+  # Docker
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "03:00"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "dependencies"
+  #     - "docker"
+  #   commit-message:
+  #     prefix: "chore(deps)"

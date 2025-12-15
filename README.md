@@ -3,6 +3,7 @@
 > "Code Smarter, Not Harder"
 
 ## 🚀 Overview
+
 This project is a cutting-edge template for development containers, designed to simplify and enhance your development workflow. By leveraging containerized environments, it ensures:
 
 - **Consistency**: Say goodbye to "it works on my machine" issues.
@@ -14,20 +15,24 @@ Whether you're a solo developer or part of a team, this template provides everyt
 ## ✨ Features
 
 ### 🔧 System Agnostic
+
 - Works seamlessly across different operating systems.
 - Eliminates environment inconsistencies with containerized development.
 
 ### 🤖 GitHub Copilot Integration
+
 - Custom instructions tailored for GitHub Copilot.
 - Ensures AI-generated code adheres to coding standards.
 
 ### 🛠️ Pre-Configured Tools
+
 - Includes pre-commit hooks for maintaining code quality.
 - Ready-to-use development environment with minimal setup.
 
 ## 🏁 Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone <repository-url>
    cd <repository-folder>
@@ -44,12 +49,14 @@ Whether you're a solo developer or part of a team, this template provides everyt
    - Begin working in the pre-configured environment.
 
 ## 🤝 Contributing
+
 We welcome contributions to improve this template! Feel free to:
 
 - Submit issues for bugs or feature requests.
 - Open pull requests with enhancements or fixes.
 
 ## 📄 License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## 🔗 References
