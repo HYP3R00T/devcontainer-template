@@ -5,8 +5,8 @@
         "dockerfile": "Dockerfile"
     },
     "postCreateCommand": "scripts/setup.sh",
-    "containerEnv": {
-        "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
+    "remoteEnv": {
+        "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
     },
     "customizations": {
         "vscode": {
@@ -14,7 +14,11 @@
                 "tamasfe.even-better-toml",
                 "christian-kohler.path-intellisense",
                 "redhat.vscode-yaml",
-                "hverlin.mise-vscode"
+                "hverlin.mise-vscode",
+                "EditorConfig.EditorConfig",
+                "timonwong.shellcheck",
+                "DavidAnson.vscode-markdownlint",
+                "github.vscode-github-actions"
             ]
         }
     }
