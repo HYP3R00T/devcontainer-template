@@ -7,45 +7,59 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a new feature! Please describe your idea clearly.
+        Thank you for suggesting a feature! Before submitting, please check if a similar request already exists.
 
-  - type: textarea
+        **Good feature requests are:**
+        - Clear and descriptive
+        - Focused on solving a specific problem
+        - Documented with examples when helpful
+
+  - type: input
     id: motivation
     attributes:
       label: Problem or Motivation
       description: What problem does this solve, or what's the motivation behind it?
-      placeholder: "Currently, there's no way to... This would help with..."
-      validations:
-        required: true
+      placeholder: "Currently, I have to manually... It would be great if..."
+    validations:
+      required: true
 
   - type: textarea
     id: proposal
     attributes:
       label: Proposed Solution
-      description: Describe the feature and how it should work.
-      placeholder: |
-        - Add functionality for...
-        - Extend the API to support...
-        - Example usage: ...
-    validations:
-      required: true
+      description: Describe how you'd like this feature to work.
+      placeholder: "Add a new flag to support... or integrate with... or expose a method to..."
 
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives Considered
-      description: Have you considered other solutions? Why are they not ideal?
+      description: Have you considered other solutions or approaches? Explain why the proposed solution is preferable.
+      placeholder: "I considered using X instead, but Y would be better because..."
 
   - type: textarea
     id: context
     attributes:
       label: Additional Context
-      description: Add any other context, screenshots, or references here.
+      description: Add any screenshots, links, or other helpful references (optional).
+      placeholder: "Screenshots, related discussions, or examples..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I have searched for existing feature requests and found none
+          required: true
+        - label: This feature is not already in progress or planned
+          required: true
 
   - type: checkboxes
     id: agreement
     attributes:
-      label: Code of Conduct
+      label: Agreement
       options:
-        - label: I agree to follow this project’s Code of Conduct.
+        - label: I agree to follow this project's Code of Conduct
           required: true
+        - label: I understand this feature will be reviewed and may not be implemented
+          required: false
