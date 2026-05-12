@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in this project, please **do not** open a public GitHub issue. Instead, please report it responsibly by:
 
-1. **Emailing**: Send details to the maintainers at [rajesh@hyperoot.dev](mailto:rajesh@hyperoot.dev)
+1. **Emailing**: Send details to the maintainers at [hyperoot.tech@proton.me](mailto:hyperoot.tech@proton.me)
 2. **Include in your report**:
    - A description of the vulnerability
    - Steps to reproduce (if applicable)
@@ -44,6 +44,6 @@ These tools help but are not a guarantee of security. Manual review is always re
 
 ## Contact
 
-For security-related questions or concerns, please contact the maintainers at [rajesh@hyperoot.dev](mailto:rajesh@hyperoot.dev).
+For security-related questions or concerns, please contact the maintainers at [hyperoot.tech@proton.me](mailto:hyperoot.tech@proton.me).
 
 Thank you for helping keep this project secure!
