@@ -1,11 +1,10 @@
 [tools]
-python = "3.14"
 prek = "latest"
+rumdl = "latest"
 shellcheck = "latest"
 
 [settings]
 experimental = true
-idiomatic_version_file_enable_tools = ["python"]
 
 [hooks]
 enter = "bash ./scripts/enter_project.sh"
