@@ -4,9 +4,9 @@
         "context": ".",
         "dockerfile": "Dockerfile"
     },
-    "postCreateCommand": "scripts/setup.sh",
+    "postCreateCommand": "bash scripts/setup.sh",
     "remoteEnv": {
-        "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
+        "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
     },
     "customizations": {
         "vscode": {
