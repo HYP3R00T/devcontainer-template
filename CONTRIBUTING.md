@@ -1,191 +1,109 @@
-# Contributing to This Project
+# Contributing
 
-Thank you for your interest in contributing! This document provides guidelines and instructions for contributing.
+Thank you for taking the time to improve this project. Contributions are welcome when they are focused, understandable, and aligned with the project's direction.
 
-## Code of Conduct
+## The responsibility rule
 
-Please review our [Code of Conduct](/.github/CODE_OF_CONDUCT.md). All contributors are expected to uphold this code in all community interactions.
+You must understand everything you submit.
 
-## Getting Started
+Using AI tools to explore ideas, write code, create tests, or prepare documentation is welcome. However, the contributor—not the tool—is responsible for the final change. You must be able to explain:
 
-### Prerequisites
+- what the change does and why it is needed;
+- how it fits the existing design;
+- which relevant edge cases were considered; and
+- how the change was verified.
 
-- Git installed and configured
-- A GitHub account
-- Development environment set up (see [README.md](README.md))
+A maintainer may ask about any part of a contribution during review. A pull request that the contributor cannot reasonably explain will not be merged and may be closed. Passing automated checks does not replace understanding or ownership.
 
-### Setting Up Your Development Environment
+## Before starting
 
-1. **Fork the repository** on GitHub
-2. **Clone your fork locally**:
+Search the existing issues and discussions before beginning work.
 
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/devcontainer-template.git
-   cd devcontainer-template
-   ```
+- Use an issue for a reproducible bug or a clearly scoped work item.
+- Start a discussion for a new feature, significant behavior change, architectural decision, or unclear proposal.
+- Wait for maintainer agreement before investing in a substantial change.
+- Small corrections, such as an obvious documentation typo, may be submitted directly.
 
-3. **Create a development branch**:
+Keeping the scope agreed in advance prevents duplicated work and makes reviews faster.
 
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+## Set up the project
 
-4. **Install dependencies** and set up development tools (see README.md for language-specific instructions)
-5. **Run tests locally** to ensure everything works
+Install [Git](https://git-scm.com/downloads), [Docker Desktop](https://docs.docker.com/desktop/), [Visual Studio Code](https://code.visualstudio.com/download), and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Start Docker Desktop before opening the project. Windows users should use Docker Desktop with its WSL 2 backend.
 
-## Making Changes
-
-### Code Standards
-
-- Follow the coding standards defined in [.github/copilot-instructions.md](.github/copilot-instructions.md)
-- Use meaningful variable and function names
-- Write clear comments explaining "why", not "what"
-- Keep functions and modules focused and single-purpose
-- Maintain consistency with the existing codebase
-
-### Commit Messages
-
-We follow [Conventional Commits](https://www.conventionalcommits.org/). See [.github/instructions/commitMessageGeneration.instructions.md](.github/instructions/commitMessageGeneration.instructions.md) for examples.
-
-**Format**: `<type>(<scope>): <subject>`
-
-Examples:
-
-- `feat: add new authentication module`
-- `fix: resolve timeout in API calls`
-- `docs: update installation guide`
-- `test: add unit tests for user service`
-
-### Testing
-
-- Write tests for all new features and bug fixes
-- Ensure all existing tests pass locally
-- Run linting and type checks before submitting
-- Aim for clear, isolated, deterministic tests
-
-### Documentation
-
-- Update the [README.md](README.md) if you're adding new features or changing functionality
-- Add docstrings/comments to all public functions and classes
-- Update relevant documentation files
-- Include examples where helpful
-
-## Submitting Changes
-
-### Before You Submit
-
-1. **Run local checks**:
+1. Fork the repository, or clone it directly if you have write access.
+2. Clone the repository and open it in Visual Studio Code.
+3. Run **Dev Containers: Reopen in Container** from the Command Palette.
+4. Wait for the container setup to install the tools and configure the Git hooks.
+5. Verify the development environment:
 
    ```bash
-   # Test (adjust command based on your project)
-   # Lint
-   # Type check
+   mise doctor
+   mise ls --current
+   prek run --all-files
    ```
 
-2. **Ensure your branch is up to date** with `main`:
+6. Create a branch from the latest `main` branch.
 
    ```bash
-   git fetch origin
-   git rebase origin/main
+   git switch -c <type>/<short-description>
    ```
 
-3. **Push your branch**:
+   Common types include `feat`, `fix`, `docs`, `test`, `refactor`, and `chore`.
 
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+## Make a focused change
 
-### Pull Request Process
+- Address one problem per pull request.
+- Prefer the smallest complete solution that satisfies the agreed requirement.
+- Follow the existing structure, naming, and style.
+- Avoid unrelated formatting, refactoring, dependency, or generated-file changes.
+- Add or update tests when behavior changes and the project provides a test suite.
+- Update documentation when setup, behavior, interfaces, or contributor workflows change.
+- Never include credentials, tokens, private data, or unrelated machine-generated files.
 
-1. **Open a pull request** on GitHub
-2. **Use the PR template** (automatically loaded) and fill in all sections
-3. **Link related issues** (e.g., "Closes #123")
-4. **Describe your changes** clearly and concisely
-5. **Wait for reviews** - address feedback constructively
-6. **Ensure CI passes** - all automated checks must pass
+Comments and documentation should explain intent, constraints, or non-obvious decisions. Do not restate code that is already clear.
 
-### Pull Request Checklist
+## Verify the change
 
-- [ ] Code follows project style guidelines
-- [ ] Documentation is updated
-- [ ] Tests added/updated
-- [ ] All tests pass locally
-- [ ] No linting or type errors
-- [ ] Commit messages follow Conventional Commits
-- [ ] No unrelated changes included
-- [ ] No hardcoded secrets or credentials
+Run the repository checks before pushing:
 
-## Code Review Process
+```bash
+prek run --all-files
+```
 
-All pull requests will be reviewed for:
+Also run any language-specific tests, builds, or checks documented by the project. Do not bypass failing hooks or disable checks to make a contribution pass.
 
-- **Correctness**: Does the code work as intended?
-- **Quality**: Is the code well-written and maintainable?
-- **Style**: Does it follow project conventions?
-- **Testing**: Are there adequate tests?
-- **Documentation**: Is it properly documented?
-- **Security**: Are there any security concerns?
+## Write clear commits
 
-See [.github/instructions/codeReview.instructions.md](.github/instructions/codeReview.instructions.md) for detailed review guidelines.
+This project follows [Conventional Commits](https://www.conventionalcommits.org/):
 
-## Types of Contributions
+```text
+<type>(<optional-scope>): <short description>
+```
 
-### Bug Reports
+Keep commits understandable and free from unrelated changes. Examples include `fix: handle missing configuration` and `docs: clarify container setup`.
 
-Found a bug? Please [open an issue](https://github.com/HYP3R00T/devcontainer-template/issues/new?template=bug_report.yml) with:
+## Open a pull request
 
-- Clear description of the issue
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment details
-- Any relevant logs or screenshots
+Complete the pull request template and include:
 
-### Feature Requests
+- the related issue or discussion, when applicable;
+- a concise explanation of what changed and why;
+- the verification you performed;
+- any relevant risks, limitations, or follow-up work; and
+- the documentation impact.
 
-Have an idea? [Open a feature request](https://github.com/HYP3R00T/devcontainer-template/issues/new?template=feature_request.yml) with:
+Keep the pull request current, respond to review questions, and ensure the required CI checks pass. Review feedback is part of the contribution process; approval and merge remain at the maintainers' discretion.
 
-- Problem statement or motivation
-- Proposed solution
-- Alternative approaches considered
-- Use cases and benefits
+## Security and community
 
-### Documentation Contributions
+Do not report security vulnerabilities in a public issue. Follow the private reporting instructions in [Security Policy](SECURITY.md).
 
-Help improve documentation by:
-
-- Fixing typos or unclear explanations
-- Adding examples or clarifications
-- Improving setup instructions
-- Adding troubleshooting sections
-
-### Code Improvements
-
-Contribute code by:
-
-- Fixing reported bugs
-- Implementing approved feature requests
-- Refactoring for clarity or performance
-- Adding or improving tests
-- Improving error handling and logging
-
-## Getting Help
-
-- **Questions?** Open a discussion or reach out to maintainers
-- **Stuck?** Ask in issues or discussions - we're here to help
-- **Documentation unclear?** Let us know so we can improve it
-
-## Recognition
-
-Contributors will be recognized in:
-
-- Commit history
-- Release notes (for significant contributions)
-- [CONTRIBUTORS.md](CONTRIBUTORS.md) (if maintained)
+All participation must follow the [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the same license as the project. See [LICENSE](LICENSE) for details.
+By contributing, you agree that your contribution will be licensed under the same terms as this project. See [LICENSE](LICENSE).
 
----
+## Thank you
 
-**Thank you for contributing!** Your help makes this project better for everyone. 🙏
+Thoughtful contributions make a project stronger. Whether you improve code, tests, documentation, or an idea, thank you for bringing care, curiosity, and ownership to the work.

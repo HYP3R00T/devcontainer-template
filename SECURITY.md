@@ -1,49 +1,34 @@
 # Security Policy
 
-## Reporting a Vulnerability
+## Supported versions
 
-If you discover a security vulnerability in this project, please **do not** open a public GitHub issue. Instead, please report it responsibly by:
+Security fixes are provided for the latest released version of this project. Before the project has a release, the current default branch is the supported development version. Older versions may not receive security updates.
 
-1. **Emailing**: Send details to the maintainers at [hyperoot.tech@proton.me](mailto:hyperoot.tech@proton.me)
-2. **Include in your report**:
-   - A description of the vulnerability
-   - Steps to reproduce (if applicable)
-   - Potential impact
-   - Suggested remediation (if you have one)
+## Report a vulnerability
 
-## Security Advisory Timeline
+Do not disclose a suspected vulnerability in a public issue, discussion, or pull request.
 
-- **Initial Response**: We aim to acknowledge receipt within 48 hours
-- **Investigation**: We will investigate and validate the issue
-- **Fix**: We will work on a fix and schedule a release
-- **Disclosure**: We will coordinate disclosure with you and credit your discovery
+If GitHub private vulnerability reporting is enabled, open the repository's **Security** page and select **Report a vulnerability**. This is the preferred reporting method because it keeps the report and follow-up work private within GitHub.
 
-## Supported Versions
+If private reporting is unavailable, email [hyperoot.tech@proton.me](mailto:hyperoot.tech@proton.me). Do not include sensitive information in any public message used to request contact.
 
-Please check the [README.md](README.md) or repository releases page for information about which versions are currently supported and receive security updates.
+Include as much of the following information as you can:
 
-## Security Best Practices
+- a concise description of the vulnerability and its potential impact;
+- the affected versions, releases, or commits;
+- reproduction steps or a proof of concept;
+- relevant configuration or environment details;
+- known mitigations or workarounds, if any; and
+- whether the vulnerability has been disclosed elsewhere.
 
-When using this project:
+A proposed fix is welcome but not required.
 
-- **Keep Dependencies Updated**: Regularly update dependencies to get security patches
-- **Review Code**: Always review code changes, especially from untrusted sources
-- **Report Issues**: If you find a vulnerability, report it privately as described above
-- **Use HTTPS**: When cloning over HTTPS, ensure you're using a secure connection
-- **Protect Secrets**: Never commit API keys, tokens, or other secrets to the repository
+## What to expect
 
-## Automated Security Scanning
+The maintainers will make a reasonable effort to acknowledge the report, assess its impact, and communicate material updates. Response and remediation times depend on the vulnerability's complexity, severity, and maintainer availability; no fixed timeline is guaranteed.
 
-This project uses automated tools to help identify potential security issues:
+Please keep vulnerability details confidential until a fix, mitigation, or coordinated disclosure plan is available. If the report is accepted, the maintainers may use a GitHub security advisory to coordinate the fix and disclosure.
 
-- Dependency vulnerability scanning
-- Code quality checks
-- Type checking (where applicable)
+Reporters may be credited in the advisory or release notes unless they request anonymity. Reporting a vulnerability does not create an entitlement to payment or a bug bounty.
 
-These tools help but are not a guarantee of security. Manual review is always recommended.
-
-## Contact
-
-For security-related questions or concerns, please contact the maintainers at [hyperoot.tech@proton.me](mailto:hyperoot.tech@proton.me).
-
-Thank you for helping keep this project secure!
+Thank you for helping keep this project and its users safe.
