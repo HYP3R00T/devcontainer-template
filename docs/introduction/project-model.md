@@ -35,3 +35,19 @@ decisions—not because a generic checklist suggests that every repository must 
 A written rule is not automatically enforced. Deterministic requirements that must block integration belong in
 automation and GitHub rules. Contextual decisions belong in clear guidance and review. The objective is not to
 automate every preference; it is to place each decision where it can remain truthful and maintainable.
+
+When deciding where a new concern belongs, ask two questions:
+
+1. Is this true for the generic template or only for the product being built?
+2. Can a machine evaluate it reliably, or does it require contextual judgment?
+
+| New concern | Appropriate layer |
+| --- | --- |
+| All tracked YAML must parse | Project-agnostic hard constraint |
+| The application must pass its selected framework tests | Project-specific hard constraint |
+| Pull requests should remain focused and explain risk | Project-agnostic soft constraint |
+| Domain services may not access persistence directly | Project-specific soft constraint until an appropriate check exists |
+
+Do not promote a preference into automation merely because a tool can approximate it. A noisy or brittle check
+teaches contributors to bypass the system. Likewise, do not leave a stable, objective safety requirement only in
+prose when CI can enforce it consistently.

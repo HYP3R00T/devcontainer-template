@@ -32,7 +32,13 @@ code --version
 
 ## Open the project
 
-1. Create a repository from this template and clone it.
+Create a new repository through GitHub's **Use this template** action when starting a real project. That produces a
+new history and ownership boundary. Clone this repository directly only when contributing improvements back to the
+template itself.
+
+Then:
+
+1. Clone the resulting repository.
 2. Optionally define `MISE_GITHUB_TOKEN` on the host to avoid anonymous GitHub rate limits during the first build.
 3. Open the repository in Visual Studio Code.
 4. Choose **Dev Containers: Reopen in Container**.
@@ -49,8 +55,21 @@ mise tasks
 prek run --all-files
 ```
 
+These commands answer different questions: `mise doctor` checks Mise's installation and environment,
+`mise ls --current` shows the resolved tool versions, `mise tasks` lists the repository's shared commands, and
+`prek` runs the complete baseline check suite. A successful setup should complete all four without asking you to
+install project tools manually inside the container.
+
+If setup is interrupted, reopen the container and run `mise install`; the setup and entry scripts are designed to
+be safe when repeated. Rebuild the container when the Dockerfile or Dev Container configuration changes. Deleting
+and recreating the container should be a recovery option, not a routine requirement.
+
 ## Adapt it to your project
 
 Add the project's runtime and language-specific tools, ignore rules, checks, and CI tasks. Keep shared commands behind Mise tasks so contributors and CI use the same interface.
+
+The Dev Container is the reference environment, not a requirement that every contributor abandon native tools.
+Native development is acceptable when it works, but container results resolve disagreements caused by host-specific
+behavior.
 
 Read [Dev container](../foundation/dev-container.md) and [Mise](../foundation/mise.md) before changing the baseline.

@@ -13,6 +13,10 @@ icon: lucide/settings
 Some parts of a project live in the repository; others exist only as settings on GitHub. A repository created
 from a template receives the template files, but its hosted settings must be configured separately.
 
+This distinction answers a common source of confusion: committing a JSON example, workflow, or CODEOWNERS file may
+describe part of a policy, but GitHub does not automatically import every repository setting from the template.
+An administrator must apply the hosted portion in each generated repository.
+
 ## Three kinds of project control
 
 | Kind | Where it lives | How it works |
@@ -36,6 +40,28 @@ from feedback into an integration requirement and prevents accidental changes fr
 review.
 
 Create the labels expected by [Dependabot](dependabot.md) when enabling automated dependency updates.
+
+## Configure only what the project will use
+
+Hosted features solve different coordination problems and should not all be enabled by habit:
+
+| Setting | When it becomes useful |
+| --- | --- |
+| Default-branch ruleset | Immediately; it protects the shared integration boundary |
+| GitHub Pages | When this Zensical handbook should be published |
+| Private vulnerability reporting | When the public repository needs a safe channel for sensitive reports |
+| Merge methods | When maintainers decide which histories contributors may create |
+| GitHub Projects | When issue priority, dependencies, and status need a shared view |
+| Discussions | When the project has a community need that does not fit actionable issues |
+| Milestones | When accepted issues belong to a real release or delivery outcome |
+
+For a solo maintainer, begin with the ruleset, Pages when desired, and private vulnerability reporting for a public
+project. Add a Project when the issue queue becomes difficult to prioritize in isolation. Discussions and
+milestones are not signs of maturity by themselves; unused coordination surfaces create more places to monitor.
+
+After applying a hosted setting, verify its behavior rather than relying on the saved configuration. Open a test
+pull request, confirm the expected checks appear, inspect the available merge methods, and confirm that Pages or
+private reporting is reachable through the repository interface.
 
 ## Official documentation
 

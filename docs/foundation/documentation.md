@@ -85,8 +85,9 @@ rumdl check docs
 uvx zensical build --clean
 ```
 
-The documentation workflow publishes after relevant changes reach the default branch. Broken navigation or theme
-configuration can still differ from Markdown lint, so a complete site build is the authoritative rendering check.
+The documentation workflow performs the same clean build for relevant pull requests, then builds and publishes
+again after those changes reach the default branch. Broken navigation or theme configuration can still differ from
+Markdown lint, so a complete site build is the authoritative rendering check.
 
 ## Official documentation
 
