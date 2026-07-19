@@ -49,6 +49,9 @@ A workflow failure is informational until a GitHub ruleset requires its status. 
 [default-branch ruleset](../github/protect-main.md) requires `Repository checks`, turning the Quality Gate into an
 integration constraint.
 
+For public repositories, configure the separate [external-contribution approval gate](../github/secure-contributions.md).
+It lets a maintainer inspect an external fork's changes before GitHub executes the requested pull-request workflow.
+
 Changing the job name changes its status context. Update the ruleset at the same time or pull requests may wait for
 a check that can no longer appear.
 

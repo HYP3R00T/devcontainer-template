@@ -39,6 +39,10 @@ Configure [default-branch protection](protect-main.md) first. It turns the repos
 from feedback into an integration requirement and prevents accidental changes from bypassing pull-request
 review.
 
+Then configure [secure external contributions](secure-contributions.md) so workflow runs requested by external
+forks wait for maintainer inspection and approval. Branch protection controls what may enter the default branch;
+workflow approval controls when untrusted proposals may consume computation.
+
 Create the labels expected by [Dependabot](dependabot.md) when enabling automated dependency updates.
 
 ## Configure only what the project will use
@@ -48,6 +52,7 @@ Hosted features solve different coordination problems and should not all be enab
 | Setting | When it becomes useful |
 | --- | --- |
 | Default-branch ruleset | Immediately; it protects the shared integration boundary |
+| External workflow approval | Immediately for public repositories that run pull-request workflows |
 | GitHub Pages | When this Zensical handbook should be published |
 | Private vulnerability reporting | When the public repository needs a safe channel for sensitive reports |
 | Merge methods | When maintainers decide which histories contributors may create |

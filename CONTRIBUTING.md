@@ -24,6 +24,10 @@ Search the existing issues before beginning work.
 - Wait for maintainer agreement before investing in a substantial change.
 - Small corrections, such as an obvious documentation typo, may be submitted directly.
 
+Agreement to begin work does not grant repository access or guarantee that the result will be merged. External
+contributors should work from a fork; collaborator access is reserved for maintainers with ongoing repository
+responsibilities.
+
 Keeping the scope agreed in advance prevents duplicated work and makes reviews faster.
 
 ## Set up the project
@@ -93,6 +97,9 @@ Complete the pull request template and include:
 - the documentation impact.
 
 Keep the pull request current, respond to review questions, and ensure the required CI checks pass. Review feedback is part of the contribution process; approval and merge remain at the maintainers' discretion.
+
+For pull requests from external forks, GitHub Actions may wait for a maintainer to inspect the changes and approve
+the workflow run. That approval permits CI execution only; it is not approval of the contribution itself.
 
 ## Security and community
 

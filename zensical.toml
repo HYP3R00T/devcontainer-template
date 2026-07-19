@@ -48,6 +48,7 @@ nav = [
   { "GitHub setup" = [
     { Overview = "github/index.md" },
     { "Protect the default branch" = "github/protect-main.md" },
+    { "Secure external contributions" = "github/secure-contributions.md" },
     { Dependabot = "github/dependabot.md" },
   ] },
   { "Adapt the template" = "adaptation.md" },
