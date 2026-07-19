@@ -1,0 +1,120 @@
+[project]
+site_name = "DevContainer Template"
+site_description = "A reusable foundation for consistent development environments and maintainable project workflows."
+repo_name = "HYP3R00T/devcontainer-template"
+repo_url = "https://github.com/HYP3R00T/devcontainer-template"
+site_author = "HYP3R00T"
+copyright = "Copyright &copy; 2026 HYP3R00T"
+
+nav = [
+  { Home = "index.md" },
+  { Introduction = [
+    { "Why this template exists" = "introduction/why-template.md" },
+    { "The project model" = "introduction/project-model.md" },
+    { "Getting started" = "introduction/getting-started.md" },
+  ] },
+  { "Project foundation" = [
+    { Overview = "foundation/index.md" },
+    { "Dev Container" = "foundation/dev-container.md" },
+    { Mise = "foundation/mise.md" },
+    { "Project entry" = "foundation/project-entry.md" },
+    { "Agent guidance" = "foundation/agents-md.md" },
+    { EditorConfig = "foundation/editorconfig.md" },
+    { "Git attributes" = "foundation/git-attributes.md" },
+    { "Git ignore" = "foundation/git-ignore.md" },
+    { "Git hooks" = [
+      { Overview = "foundation/git-hooks/index.md" },
+      { Providers = "foundation/git-hooks/providers/index.md" },
+      { "pre-commit-hooks" = "foundation/git-hooks/providers/pre-commit-hooks.md" },
+      { "rumdl-pre-commit" = "foundation/git-hooks/providers/rumdl-pre-commit.md" },
+      { Commitizen = "foundation/git-hooks/providers/commitizen.md" },
+      { shellcheck-py = "foundation/git-hooks/providers/shellcheck-py.md" },
+    ] },
+    { "GitHub Actions" = "foundation/github-actions.md" },
+    { Documentation = "foundation/documentation.md" },
+    { README = "foundation/readme.md" },
+    { "Community files" = "foundation/community-files.md" },
+    { License = "foundation/license.md" },
+  ] },
+  { "Development workflow" = [
+    { Overview = "workflow/index.md" },
+    { "Hard and soft constraints" = "workflow/constraints.md" },
+    { "Start a project" = "workflow/start-project.md" },
+    { "Iterative development" = "workflow/iteration.md" },
+    { "Priorities and dependencies" = "workflow/priorities.md" },
+    { Traceability = "workflow/traceability.md" },
+    { "Maintenance and releases" = "workflow/maintenance.md" },
+  ] },
+  { "GitHub setup" = [
+    { Overview = "github/index.md" },
+    { "Protect the default branch" = "github/protect-main.md" },
+    { "Secure external contributions" = "github/secure-contributions.md" },
+    { Dependabot = "github/dependabot.md" },
+  ] },
+  { "Adapt the template" = "adaptation.md" },
+]
+
+[project.theme]
+language = "en"
+features = [
+  "announce.dismiss",
+  "content.action.edit",
+  "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.path",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+]
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+scheme = "default"
+media = "(prefers-color-scheme: light)"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+scheme = "slate"
+media = "(prefers-color-scheme: dark)"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.theme.icon]
+logo = "lucide/layout-template"
+repo = "fontawesome/brands/github"
+next = "lucide/arrow-right"
+previous = "lucide/arrow-left"
+search = "lucide/search"
+top = "lucide/arrow-up"
+edit = "lucide/file-pen-line"
+view = "lucide/file-braces-corner"
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true

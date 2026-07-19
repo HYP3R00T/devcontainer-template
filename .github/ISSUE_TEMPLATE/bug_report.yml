@@ -1,107 +1,102 @@
-name: 🐛 Bug Report
-description: Report a reproducible issue or unexpected behavior in the project.
+name: 🐛 Bug report
+description: Report a reproducible problem or unexpected behavior.
 title: "[Bug]: "
 labels: [bug]
-
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reporting a bug! Detailed bug reports help us fix issues faster.
+        Thank you for helping improve the project. Search existing issues first, then provide the shortest reproduction you can.
 
-        **Before submitting:**
-        - Search existing issues to avoid duplicates
-        - Verify the issue is reproducible with the latest version
-        - Isolate the problem (provide minimal steps to reproduce)
+        Do not report security vulnerabilities here. Follow the repository's Security Policy instead.
 
   - type: input
-    id: os
+    id: version
     attributes:
-      label: Operating System
-      description: Your operating system and version.
-      placeholder: "Windows 11, macOS 14.2, Ubuntu 22.04 LTS"
+      label: Project version or commit
+      description: Identify the affected release, tag, or commit.
+      placeholder: "v1.2.3 or commit abc1234"
     validations:
       required: true
 
   - type: input
-    id: installation_method
+    id: operating-system
     attributes:
-      label: Installation Method
-      description: How did you install this project? (e.g., `pip install`, `uv sync`, `poetry install`, Docker, manual setup)
-      placeholder: "pip install -e ., uv sync, poetry install, Docker"
+      label: Operating system
+      description: Include the operating system and version.
+      placeholder: "Windows 11, macOS 15, or Ubuntu 24.04"
     validations:
       required: true
-
-  - type: input
-    id: environment_info
-    attributes:
-      label: Environment Details (Optional)
-      description: Python version, relevant dependencies, or other environment details that might affect the issue.
-      placeholder: "Python 3.13, specific library versions"
-    validations:
-      required: false
 
   - type: textarea
-    id: steps
+    id: environment
     attributes:
-      label: Steps to Reproduce
-      description: Provide clear, numbered steps to reproduce the issue. Be as specific as possible.
+      label: Relevant environment details
+      description: Include runtimes, dependencies, configuration, installation method, or container details that may affect the problem.
+      placeholder: "Runtime and dependency versions, configuration, installation method, or container information"
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest complete set of steps, commands, configuration, or example repository that reproduces the problem.
       placeholder: |
-        1. Step 1
-        2. Step 2
-        3. Step 3
-        4. Step 4
-        5. Error occurs
+        1. Configure ...
+        2. Run ...
+        3. Observe ...
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected Behavior
-      description: What should happen instead? Be clear and concise.
-      placeholder: "The application should display a settings panel without errors."
-    validations:
-      required: false
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual Behavior
-      description: What happened instead? Describe the bug clearly and concisely.
-      placeholder: "The application crashes with an Error"
+      label: Expected behavior
+      description: Describe what you expected to happen.
     validations:
       required: true
 
   - type: textarea
-    id: logs
+    id: actual
     attributes:
-      label: Relevant Logs or Error Messages
-      description: Paste complete error logs, full stack traces, or screenshots. Use code blocks for readability.
-      placeholder: |
-        ```
-        Put your log in here
-        ```
+      label: Actual behavior
+      description: Describe what happened instead.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Reproduction frequency
+      description: How often does the problem occur?
+      options:
+        - Every time
+        - Often
+        - Intermittently
+        - Once
+        - Unknown
+    validations:
+      required: true
 
   - type: textarea
-    id: workaround
+    id: evidence
     attributes:
-      label: Workaround (if available)
-      description: If you've found a way to work around this issue, please describe it.
-      placeholder: "As a workaround, I can set the timeout environment variable before starting the app."
-    validations:
-      required: false
+      label: Logs, errors, or screenshots
+      description: Add relevant evidence if available. Use code blocks for logs, and remove secrets and private information before submitting.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add workarounds, related issues, or other useful information.
 
   - type: checkboxes
-    id: checks
+    id: confirmation
     attributes:
-      label: Verification Checklist
+      label: Confirmation
       options:
-        - label: I've verified this bug hasn't been reported before
+        - label: I searched the existing issues and did not find a duplicate.
           required: true
-        - label: I can reproduce this issue consistently
+        - label: I have removed secrets, credentials, and private information from this report.
           required: true
-        - label: I've included all relevant logs, screenshots, and error messages
+        - label: I agree to follow this project's Code of Conduct.
           required: true
-        - label: I've tested with the latest version of the project
-          required: false

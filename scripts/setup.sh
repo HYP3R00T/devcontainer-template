@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-/usr/local/bin/mise trust /workspaces/devcontainer-template/mise.toml && /usr/local/bin/mise install
-sudo apt update && sudo apt install -y python3 tmux
+cd "$(git rev-parse --show-toplevel)"
+
+mise trust mise.toml
+mise install

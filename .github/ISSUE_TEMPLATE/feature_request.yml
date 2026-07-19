@@ -1,65 +1,60 @@
-name: 💡 Feature Request
-description: Suggest a new idea, enhancement, or improvement.
+name: 💡 Feature proposal
+description: Describe a problem or opportunity for the maintainers to consider.
 title: "[Feature]: "
 labels: [enhancement]
-
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting a feature! Before submitting, please check if a similar request already exists.
+        Thank you for sharing an idea. Explain the problem before proposing an implementation.
 
-        **Good feature requests are:**
-        - Clear and descriptive
-        - Focused on solving a specific problem
-        - Documented with examples when helpful
+        A proposal is not automatically accepted, scheduled, or approved for development. Wait for maintainer agreement before opening a pull request.
 
-  - type: input
-    id: motivation
+  - type: textarea
+    id: problem
     attributes:
-      label: Problem or Motivation
-      description: What problem does this solve, or what's the motivation behind it?
-      placeholder: "Currently, I have to manually... It would be great if..."
+      label: Problem or opportunity
+      description: What limitation, need, or opportunity should the project address? Who is affected?
+      placeholder: "When ..., users cannot ..., which causes ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the result or capability you would like, without prescribing unnecessary implementation details.
     validations:
       required: true
 
   - type: textarea
     id: proposal
     attributes:
-      label: Proposed Solution
-      description: Describe how you'd like this feature to work.
-      placeholder: "Add a new flag to support... or integrate with... or expose a method to..."
+      label: Possible solution
+      description: If you have an approach in mind, describe it here. This is optional and may not be the final design.
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives Considered
-      description: Have you considered other solutions or approaches? Explain why the proposed solution is preferable.
-      placeholder: "I considered using X instead, but Y would be better because..."
+      label: Alternatives considered
+      description: Describe existing workarounds or alternative approaches, if any.
 
   - type: textarea
     id: context
     attributes:
-      label: Additional Context
-      description: Add any screenshots, links, or other helpful references (optional).
-      placeholder: "Screenshots, related discussions, or examples..."
+      label: Additional context
+      description: Add examples, screenshots, references, constraints, or related issues.
 
   - type: checkboxes
-    id: checklist
+    id: confirmation
     attributes:
-      label: Prerequisites
+      label: Confirmation
       options:
-        - label: I have searched for existing feature requests and found none
+        - label: I searched existing issues and did not find a duplicate.
           required: true
-        - label: This feature is not already in progress or planned
+        - label: I understand that this proposal may be declined, changed, or left unscheduled.
           required: true
-
-  - type: checkboxes
-    id: agreement
-    attributes:
-      label: Agreement
-      options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I will wait for maintainer approval before beginning substantial implementation work.
           required: true
-        - label: I understand this feature will be reviewed and may not be implemented
-          required: false
+        - label: I agree to follow this project's Code of Conduct.
+          required: true
