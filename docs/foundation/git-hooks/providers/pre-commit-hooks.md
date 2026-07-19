@@ -56,6 +56,10 @@ The mixed-line-ending hook uses `--fix=no`. It detects inconsistency without ove
 
 A large file should be removed, stored elsewhere, or handled through an explicitly adopted Git LFS policy. Merge markers must be resolved. A detected key must be removed and rotated if exposure was possible. A protected-branch failure means the work belongs on a separate branch.
 
+The Quality Gate intentionally skips `no-commit-to-branch`. On a push workflow, GitHub has already integrated and
+checked out `main`, so the hook cannot distinguish a protected pull-request merge from a prohibited direct commit.
+The hosted ruleset enforces that distinction before the update reaches the branch.
+
 ## Running these hooks
 
 ```bash

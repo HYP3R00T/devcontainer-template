@@ -32,10 +32,16 @@ The Quality Gate runs for pull requests targeting `main`, pushes to `main`, and 
 | `persist-credentials: false` | Removes the checkout token after fetching so later checks cannot reuse it implicitly |
 | Concurrency with cancellation | Stops obsolete runs when newer commits arrive on the same reference |
 | `j178/prek-action@v2` | Runs `.pre-commit-config.yaml` instead of maintaining a second CI-only check list |
+| `--skip no-commit-to-branch` | Leaves direct-commit prevention to the local hook and hosted branch rules |
 | Job name `Repository checks` | Provides the stable status context required by the default-branch ruleset |
 
 The workflow deliberately contains no placeholder build, test, type-check, or language-lint steps. A derived project
 should add real project-specific verification only after its runtime and test strategy exist.
+
+The Quality Gate skips `no-commit-to-branch` because CI checks the branch after checkout, not while a contributor is
+creating a commit. A legitimate push produced by merging a pull request therefore has `main` checked out. Running
+the local branch guard in that context would reject the protected integration path it is meant to support. The hook
+still blocks ordinary local commits, while the GitHub ruleset prevents direct hosted updates to `main`.
 
 ## From feedback to enforcement
 
