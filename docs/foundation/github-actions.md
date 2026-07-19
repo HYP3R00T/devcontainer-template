@@ -18,7 +18,7 @@ jobs: verifying repository quality and publishing the documentation site.
 | Workflow | File | Responsibility |
 | --- | --- | --- |
 | Quality Gate | `.github/workflows/ci.yaml` | Run the same `prek` suite used during local development |
-| Documentation | `.github/workflows/docs.yml` | Build the Zensical site and deploy it to GitHub Pages |
+| Documentation | `.github/workflows/docs.yml` | Validate documentation pull requests and deploy the Zensical site from the default branch |
 
 Keeping them separate gives each workflow focused permissions, triggers, status, and failure reporting.
 
@@ -52,11 +52,11 @@ integration constraint.
 Changing the job name changes its status context. Update the ruleset at the same time or pull requests may wait for
 a check that can no longer appear.
 
-## Documentation deployment
+## Documentation validation and deployment
 
-The Documentation workflow runs after relevant changes reach `main` or `master`. Its path filter limits deployment
-to changes under `docs/`, the workflow itself, or `zensical.toml`, avoiding unnecessary Pages builds for unrelated
-code changes.
+The Documentation workflow builds relevant changes in pull requests targeting `main` or `master`, catching broken
+navigation and configuration before merge. After those changes reach the default branch, it builds again and deploys
+the resulting site. Path filters prevent documentation work from running for unrelated code changes.
 
 | Permission or step | Responsibility |
 | --- | --- |
@@ -66,7 +66,7 @@ code changes.
 | `github-pages` environment | Record the deployment and expose its resulting URL |
 | `astral-sh/setup-uv` | Install uv without managing a global Python environment manually |
 | `uvx zensical build --clean` | Resolve Zensical in isolation and build a fresh site |
-| Pages artifact and deploy actions | Upload the `site/` output and publish it through GitHub Pages |
+| Conditional Pages artifact and deploy actions | Upload and publish `site/` only for pushes to the default branch |
 
 The workflow file can describe deployment, but the generated repository must still enable GitHub Pages with
 GitHub Actions as its source. That hosted setting belongs to the [GitHub setup](../github/index.md) layer.
