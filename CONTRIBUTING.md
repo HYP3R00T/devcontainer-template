@@ -17,10 +17,10 @@ A maintainer may ask about any part of a contribution during review. A pull requ
 
 ## Before starting
 
-Search the existing issues and discussions before beginning work.
+Search the existing issues before beginning work.
 
-- Use an issue for a reproducible bug or a clearly scoped work item.
-- Start a discussion for a new feature, significant behavior change, architectural decision, or unclear proposal.
+- Use the appropriate issue form for a reproducible bug or feature proposal.
+- Refine unclear or significant proposals with the maintainer in the issue before implementation.
 - Wait for maintainer agreement before investing in a substantial change.
 - Small corrections, such as an obvious documentation typo, may be submitted directly.
 
@@ -86,7 +86,7 @@ Keep commits understandable and free from unrelated changes. Examples include `f
 
 Complete the pull request template and include:
 
-- the related issue or discussion, when applicable;
+- the related issue, when applicable;
 - a concise explanation of what changed and why;
 - the verification you performed;
 - any relevant risks, limitations, or follow-up work; and

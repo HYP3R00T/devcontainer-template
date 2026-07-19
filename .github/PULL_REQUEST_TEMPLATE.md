@@ -6,7 +6,7 @@
 
 ## Related work
 
-<!-- Link the accepted issue or discussion. Use "Closes #123" when this PR should close an issue. For a small correction without an issue, write "None" and briefly explain why. -->
+<!-- Link the accepted issue. Use "Closes #123" when this PR should close it. For a small correction without an issue, write "None" and briefly explain why. -->
 
 ## Changes
 
