@@ -4,12 +4,17 @@ icon: lucide/route
 
 # Traceability
 
+!!! note "Pain point"
+
+    Code shows the implementation that survived, but it rarely explains the request, rejected alternatives, review
+    evidence, or operational constraints. Preserving every conversation creates the opposite problem: too much
+    history to find the decisions that matter.
+
 Traceability should answer: what was requested, why was it accepted, how was it implemented, and what evidence supported integration?
 
 | Record | What it should preserve |
 | --- | --- |
-| Discussion | Exploration, competing ideas, and unresolved questions |
-| Issue | Accepted problem, scope, criteria, priority, and dependencies |
+| Issue | Proposal, accepted scope, criteria, priority, dependencies, and relevant exploration |
 | Branch | Temporary workspace for one issue |
 | Pull request | Implementation summary, review, verification, and integration decision |
 | Commit history | Meaningful steps in the accepted implementation |

@@ -4,6 +4,11 @@ icon: lucide/terminal-square
 
 # shellcheck-py
 
+!!! note "Pain point"
+
+    Shell scripts can fail because of quoting, expansion, or portability mistakes that are difficult to notice in
+    review and may appear only when a newcomer runs the setup on another machine.
+
 Official source: [shellcheck-py/shellcheck-py](https://github.com/shellcheck-py/shellcheck-py)
 
 The provider packages ShellCheck so the hook can run in an isolated environment. The configured `shellcheck` hook analyzes supported shell scripts before they are committed.

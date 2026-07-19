@@ -4,6 +4,11 @@ icon: lucide/eye-off
 
 # Git ignore
 
+!!! note "Pain point"
+
+    Development creates caches, generated output, local overrides, and secret-bearing environment files. Without a
+    shared exclusion policy, those machine-local artifacts can enter commits and distract from project content.
+
 `.gitignore` defines untracked paths that Git should normally leave out of commits. It protects the repository from machine-local state, generated output, caches, and secret-bearing local files.
 
 ## Current rules

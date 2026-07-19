@@ -4,6 +4,11 @@ icon: lucide/package-check
 
 # Maintenance and releases
 
+!!! note "Pain point"
+
+    A project can continue adding features while dependencies age, documentation drifts, defects recur, and unused
+    flexibility remains in the codebase. Delivery speed then creates a growing maintenance burden.
+
 Maintenance begins with the first merged change. It includes dependency updates, defects, compatibility, documentation accuracy, security response, and removal of obsolete behavior.
 
 ## Observe and maintain

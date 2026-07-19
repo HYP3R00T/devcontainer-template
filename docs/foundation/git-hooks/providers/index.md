@@ -4,6 +4,11 @@ icon: lucide/library
 
 # Hook providers
 
+!!! note "Pain point"
+
+    A flat hook list shows names without explaining ownership or purpose. Grouping checks by their upstream provider
+    makes updates, documentation, and failure investigation easier to follow.
+
 The configuration uses remote hook repositories. Each provider owns one or more hooks and supplies the executable environment that `prek` runs.
 
 | Provider | Role in this template | Configured hooks |

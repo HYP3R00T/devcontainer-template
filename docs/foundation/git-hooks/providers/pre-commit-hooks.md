@@ -4,6 +4,11 @@ icon: lucide/list-checks
 
 # pre-commit-hooks
 
+!!! note "Pain point"
+
+    Small repository defects—invalid configuration, unsafe filenames, broken executable metadata, conflict markers,
+    and accidental secrets—are easy to miss individually but expensive once they enter shared history.
+
 Official source: [pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
 
 This upstream repository supplies small, language-agnostic checks. They are grouped here by the problem they prevent rather than presented as an unexplained flat list.

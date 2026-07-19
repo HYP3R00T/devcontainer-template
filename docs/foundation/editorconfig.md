@@ -4,6 +4,11 @@ icon: lucide/panel-top
 
 # Consistent editing with EditorConfig
 
+!!! note "Pain point"
+
+    Editors use different defaults for indentation, encoding, line endings, trailing spaces, and final newlines.
+    Those differences create noisy reviews even when contributors change the same logical content.
+
 EditorConfig gives compatible editors a shared baseline for how files are created and saved. It reduces noisy diffs caused by contributors using different editor defaults.
 
 The repository's `.editorconfig` is discovered automatically when an editor opens a file. `root = true` tells the editor to stop searching parent directories, preventing unrelated machine-level configuration from changing this project.
@@ -28,6 +33,22 @@ The repository's `.editorconfig` is discovered automatically when an editor open
 - Formatting changes stay focused on meaningful content.
 
 The dev container installs the [EditorConfig extension for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig). Other editors may support EditorConfig directly or through a plugin; consult the official [EditorConfig editor list](https://editorconfig.org/#pre-installed).
+
+## VS Code workspace settings
+
+The repository's `.vscode/settings.json` adds editor-specific behavior that EditorConfig cannot express:
+
+| Setting | Selected behavior | Why it is configured |
+| --- | --- | --- |
+| `editor.formatOnSave` | Enabled | Applies the selected formatter before routine edits leave the editor |
+| `editor.insertSpaces` | Enabled | Keeps VS Code's indentation behavior aligned with EditorConfig |
+| Markdown formatter | Rumdl | Uses the same Markdown tool configured by the repository and Git hook |
+| TOML formatter | Even Better TOML | Gives Mise, Zensical, and rumdl configuration a syntax-aware formatter |
+| YAML formatter | Red Hat YAML | Provides syntax-aware formatting for workflows and issue forms |
+| YAML quick suggestions | Enabled outside comments | Preserves schema-assisted completion without suggesting text inside comments |
+
+These settings are workspace recommendations, not CI enforcement. The corresponding extensions are installed by
+the Dev Container configuration so the documented defaults are available in the reference environment.
 
 ## Responsibility boundaries
 

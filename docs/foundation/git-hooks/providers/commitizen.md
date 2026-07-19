@@ -4,6 +4,11 @@ icon: lucide/message-square-check
 
 # Commitizen
 
+!!! note "Pain point"
+
+    Unstructured commit messages make history difficult to scan and prevent reliable automation from understanding
+    whether a change is a feature, fix, documentation update, or maintenance task.
+
 Official source: [commitizen-tools/commitizen](https://github.com/commitizen-tools/commitizen)
 
 The configured `commitizen` hook runs at the `commit-msg` stage. Unlike file hooks, it receives the temporary file containing the proposed commit message and validates that message before Git creates the commit.

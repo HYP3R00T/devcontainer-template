@@ -4,7 +4,12 @@ icon: lucide/log-in
 
 # Project-entry automation
 
-The enter hook handles small setup actions that should be true whenever work begins.
+!!! note "Pain point"
+
+    Repository-local setup such as installing Git hooks is easy to forget, especially after a fresh clone or when
+    switching between projects. Written reminders do not guarantee that the required local state exists.
+
+The Mise enter hook performs small, safe setup actions that should be true whenever work begins.
 
 ## What it does
 

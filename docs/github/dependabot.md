@@ -4,6 +4,12 @@ icon: lucide/bot
 
 # Dependabot
 
+!!! note "Pain point"
+
+    GitHub Actions and other dependencies continue changing after a project is created. Checking every upstream
+    release manually is easy to postpone, while ungrouped automated updates can overwhelm a small project with
+    maintenance pull requests.
+
 Official references: [Dependabot options](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference), [managing labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels), and [`gh label create`](https://cli.github.com/manual/gh_label_create).
 
 ## Purpose

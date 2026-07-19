@@ -4,6 +4,11 @@ icon: lucide/git-branch
 
 # Git attributes
 
+!!! note "Pain point"
+
+    Git can check out text differently according to operating-system and user configuration. Line endings may be
+    rewritten unexpectedly, and binary files can appear as meaningless text changes.
+
 `.gitattributes` tells Git how to classify tracked files and normalize their content. Unlike editor settings, these rules participate in checkout, staging, diffs, and generated archives.
 
 ## What this repository declares

@@ -4,6 +4,12 @@ icon: lucide/panel-top
 
 # README
 
+!!! note "Pain point"
+
+    A visitor should not need to explore the repository before understanding what the project provides and how to
+    use it. Overloaded READMEs create the opposite problem by hiding essential information inside contributor and
+    implementation detail.
+
 Official references: [About repository READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes), [workflow status badges](https://docs.github.com/en/actions/how-tos/monitor-workflows/add-a-status-badge), and [Shields.io badges](https://shields.io/badges).
 
 ## Purpose

@@ -4,6 +4,11 @@ icon: lucide/scale
 
 # License
 
+!!! note "Pain point"
+
+    Publishing source code does not automatically grant others permission to use, modify, or redistribute it.
+    Without an explicit license, potential users and contributors must treat those rights as unclear or reserved.
+
 Official references:
 
 - [MIT License — Open Source Initiative](https://opensource.org/license/mit)

@@ -4,6 +4,11 @@ icon: lucide/git-commit-horizontal
 
 # Git hooks with prek
 
+!!! note "Pain point"
+
+    Repeatable checks provide little protection when contributors must remember to run them manually. Mistakes are
+    then discovered late in review or CI, after the feedback has become slower and more expensive to address.
+
 `prek` manages automation at Git lifecycle events. A hook may inspect files, modify files, invoke project scripts, validate commit messages, or enforce repository policy.
 
 ## How to use this section
@@ -25,14 +30,14 @@ This template installs `pre-commit` and `commit-msg` hooks. See the official [st
 
 ## Configured providers
 
-The [hook providers](repositories/index.md) section groups hooks by the repository or built-in source that supplies them. Each provider page begins with its official documentation and explains every selected hook in context.
+The [hook providers](providers/index.md) section groups hooks by the repository or built-in source that supplies them. Each provider page begins with its official documentation and explains every selected hook in context.
 
 | Provider | Responsibility |
 | --- | --- |
-| [pre-commit-hooks](repositories/pre-commit-hooks.md) | Generic validity, portability, hygiene, and protection |
-| [rumdl-pre-commit](repositories/rumdl-pre-commit.md) | Markdown validation |
-| [Commitizen](repositories/commitizen.md) | Commit-message validation |
-| [shellcheck-py](repositories/shellcheck-py.md) | Shell static analysis |
+| [pre-commit-hooks](providers/pre-commit-hooks.md) | Generic validity, portability, hygiene, and protection |
+| [rumdl-pre-commit](providers/rumdl-pre-commit.md) | Markdown validation |
+| [Commitizen](providers/commitizen.md) | Commit-message validation |
+| [shellcheck-py](providers/shellcheck-py.md) | Shell static analysis |
 
 ## Running project scripts
 

@@ -4,7 +4,14 @@ icon: lucide/sliders-horizontal
 
 # Adapt the template
 
-The template supplies project-agnostic foundations. A new project must replace identity and add only the technical and operational decisions its product requires.
+!!! note "Pain point"
+
+    A generated repository initially contains the template's identity and only language-agnostic behavior. Leaving
+    those values unchanged misrepresents ownership; adding speculative project configuration creates maintenance
+    work before the product has made the corresponding decisions.
+
+The template supplies project-agnostic foundations. A new project must replace identity and add only the technical
+and operational decisions its product requires.
 
 ## Replace project identity
 

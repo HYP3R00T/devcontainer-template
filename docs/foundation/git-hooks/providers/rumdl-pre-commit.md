@@ -4,6 +4,11 @@ icon: lucide/file-text
 
 # rumdl-pre-commit
 
+!!! note "Pain point"
+
+    Markdown can render successfully while remaining inconsistent, difficult to review, or incompatible with the
+    published documentation style. Manual proofreading does not reliably catch structural issues across every page.
+
 Official source: [rvben/rumdl-pre-commit](https://github.com/rvben/rumdl-pre-commit)
 
 The provider packages rumdl for an isolated hook environment. The configured `rumdl` hook checks Markdown files and reads the project policy from `rumdl.toml`.

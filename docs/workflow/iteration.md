@@ -4,6 +4,11 @@ icon: lucide/refresh-cw
 
 # Iterative development
 
+!!! note "Pain point"
+
+    Large batches of work are difficult to understand, verify, review, and reverse. When implementation silently
+    expands beyond its accepted scope, traceability no longer explains what the pull request was meant to achieve.
+
 The same loop applies to features, defects, refactoring, and documentation changes.
 
 ## Before coding

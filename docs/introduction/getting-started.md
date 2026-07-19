@@ -4,6 +4,11 @@ icon: lucide/rocket
 
 # Getting started
 
+!!! note "Pain point"
+
+    Onboarding instructions often assume that contributors already know which host tools are required and how to
+    verify them. Missing prerequisites then appear as project failures even though the repository itself is sound.
+
 ## What you need
 
 Install these host tools before opening the repository:
@@ -48,4 +53,4 @@ prek run --all-files
 
 Add the project's runtime and language-specific tools, ignore rules, checks, and CI tasks. Keep shared commands behind Mise tasks so contributors and CI use the same interface.
 
-Read [Dev container](../concepts/dev-container.md) and [Mise](../concepts/mise.md) before changing the baseline.
+Read [Dev container](../foundation/dev-container.md) and [Mise](../foundation/mise.md) before changing the baseline.

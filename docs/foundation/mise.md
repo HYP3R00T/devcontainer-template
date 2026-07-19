@@ -4,7 +4,13 @@ icon: lucide/wrench
 
 # Tool management with Mise
 
-Mise answers a second question: **which tools and commands does this repository use?**
+!!! note "Pain point"
+
+    Asking contributors to install tools manually produces different versions, missing commands, and setup notes
+    that drift away from CI. Even when everyone installs the correct tools once, updates must be coordinated later.
+
+Mise defines which development tools and shared commands the repository uses. The committed configuration is the
+human-readable requirement; the lockfile records the exact accepted resolution.
 
 ## Responsibilities
 
@@ -22,9 +28,15 @@ Tools use readable requirements such as `latest`. `mise.lock` records the exact 
 
 Cross-platform tools install everywhere. Unix-only tools declare Linux and macOS restrictions, so Windows compatibility never weakens the reference environment.
 
+The template enables Mise's GitHub credential integration so authenticated Git operations can be reused for tool
+downloads. Local secrets remain outside `mise.toml` and may be loaded from the ignored `.env` file.
+
 ## Maintenance rule
 
 After changing tools, run `mise install` and update `mise.lock`. After adding a recurring command, expose it as a Mise task and call that task from CI rather than duplicating its implementation.
+
+Use `mise tasks` to discover repository commands and `mise ls --current` to inspect resolved tools. A derived project
+should add only the runtimes and tasks it actually uses.
 
 ## Official documentation
 
