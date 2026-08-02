@@ -50,7 +50,8 @@ usable or observable at its boundary; it does not mean completing every feature 
 issues whose outcomes can be demonstrated independently. Record dependencies only when one issue genuinely cannot
 succeed before another.
 
-Add issues to a GitHub Project when their priority, dependencies, and state need to be visible together. Avoid
+Add issues to a GitHub Project when their priority, dependencies, and state need to be visible together. When using
+the bundled issue skills, follow the hosted [issue workflow Project](../github/project-workflow.md) lifecycle. Avoid
 milestones until the project has a real release or delivery plan that needs them.
 
 Only after this should the project add its language, application structure, and project-specific checks to the

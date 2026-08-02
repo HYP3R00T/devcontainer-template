@@ -51,4 +51,5 @@ request; a risky architectural change needs more exploration and evidence. Incre
 the cost of misunderstanding increases.
 
 First understand [hard and soft constraints](constraints.md). Then continue with
-[Start a project](start-project.md) and [Iterative development](iteration.md).
+[Start a project](start-project.md), [Iterative development](iteration.md), and the optional
+[agent-assisted issue delivery](agent-delivery.md) workflow.

@@ -29,6 +29,7 @@ The template also establishes repository hygiene, automated checks, contribution
 - Local Git hooks and repository checks powered by [prek](https://prek.j178.dev/).
 - A pull-request quality gate that runs the same checks as local development.
 - Structured issue forms, contribution guidance, security reporting, and code ownership.
+- Manual, project-level skills for refining one issue and delivering it to a verified pull request.
 - Developer documentation published with [Zensical](https://zensical.org/).
 - Automated GitHub Actions dependency updates through Dependabot.
 

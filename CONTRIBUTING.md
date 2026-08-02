@@ -30,6 +30,41 @@ responsibilities.
 
 Keeping the scope agreed in advance prevents duplicated work and makes reviews faster.
 
+An issue is ready for implementation when it has one observable outcome, relevant evidence and constraints,
+testable acceptance criteria, exact available verification, explicit dependencies, no unresolved material decision,
+and clear non-goals. Newly tracked work begins in the configured GitHub Project's `Backlog` state.
+
+## Refine and deliver issues with a coding agent
+
+Trusted checkouts include two manually invoked, Agent Skills-compatible workflows. Reload project skills through
+your client when the checkout gained or changed a skill after the session started.
+
+Use `refine-issue` with one full GitHub issue URL to inspect a backlog issue against live repository evidence,
+resolve only material readiness gaps, structure the issue, and move it to `Ready`:
+
+```text
+refine-issue https://github.com/OWNER/REPOSITORY/issues/123
+```
+
+If a product or technical decision remains, the skill leaves the issue unchanged in `Backlog` and asks for that
+decision. It never implements the issue or changes repository files.
+
+After refinement and maintainer approval, invoke `issue-to-pr` separately with the same URL:
+
+```text
+issue-to-pr https://github.com/OWNER/REPOSITORY/issues/123
+```
+
+The delivery skill validates live issue and Project state, moves the item through `In Progress`, creates or resumes
+an isolated issue worktree, implements and verifies the accepted outcome, and opens or updates one pull request. It
+stops at `In Review`; it never merges, enables auto-merge, marks the issue `Done`, publishes, or removes its branch
+or worktree.
+
+These workflows require a trusted checkout, authenticated GitHub CLI access, one unambiguous configured Project,
+and collaborator permission to push. They are not the fork contribution path for external contributors. Read
+[Agent-assisted issue delivery](docs/workflow/agent-delivery.md) for the complete authority boundaries and hosted
+setup requirements.
+
 ## Set up the project
 
 Install [Git](https://git-scm.com/downloads), [Docker Desktop](https://docs.docker.com/desktop/), [Visual Studio Code](https://code.visualstudio.com/download), and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Start Docker Desktop before opening the project. Windows users should use Docker Desktop with its WSL 2 backend.
@@ -46,13 +81,15 @@ Install [Git](https://git-scm.com/downloads), [Docker Desktop](https://docs.dock
    prek run --all-files
    ```
 
-6. Create a branch from the latest `main` branch.
+6. Create a branch from the latest remote default branch. For an accepted issue, use the traceable
+   `issue-<number>-<short-description>` convention:
 
    ```bash
-   git switch -c <type>/<short-description>
+   git fetch origin
+   git switch -c issue-<number>-<short-description> origin/main
    ```
 
-   Common types include `feat`, `fix`, `docs`, `test`, `refactor`, and `chore`.
+   For a permitted small correction without an issue, use a concise conventional prefix such as `docs/` or `fix/`.
 
 ## Make a focused change
 
@@ -91,9 +128,10 @@ Keep commits understandable and free from unrelated changes. Examples include `f
 Complete the pull request template and include:
 
 - the related issue, when applicable;
-- a concise explanation of what changed and why;
-- the verification you performed;
-- any relevant risks, limitations, or follow-up work; and
+- the observable behavior and important implementation decisions;
+- criterion-level evidence for accepted work;
+- exact verification and unavailable checks;
+- relevant risks, limitations, review hotspots, or follow-up work; and
 - the documentation impact.
 
 Keep the pull request current, respond to review questions, and ensure the required CI checks pass. Review feedback is part of the contribution process; approval and merge remain at the maintainers' discretion.

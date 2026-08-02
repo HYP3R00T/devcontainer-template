@@ -41,6 +41,7 @@ nav = [
     { "Hard and soft constraints" = "workflow/constraints.md" },
     { "Start a project" = "workflow/start-project.md" },
     { "Iterative development" = "workflow/iteration.md" },
+    { "Agent-assisted delivery" = "workflow/agent-delivery.md" },
     { "Priorities and dependencies" = "workflow/priorities.md" },
     { Traceability = "workflow/traceability.md" },
     { "Maintenance and releases" = "workflow/maintenance.md" },
@@ -48,6 +49,7 @@ nav = [
   { "GitHub setup" = [
     { Overview = "github/index.md" },
     { "Protect the default branch" = "github/protect-main.md" },
+    { "Issue workflow Project" = "github/project-workflow.md" },
     { "Secure external contributions" = "github/secure-contributions.md" },
     { Dependabot = "github/dependabot.md" },
   ] },

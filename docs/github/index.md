@@ -43,7 +43,9 @@ Then configure [secure external contributions](secure-contributions.md) so workf
 forks wait for maintainer inspection and approval. Branch protection controls what may enter the default branch;
 workflow approval controls when untrusted proposals may consume computation.
 
-Create the labels expected by [Dependabot](dependabot.md) when enabling automated dependency updates.
+Create the labels expected by [Dependabot](dependabot.md) when enabling automated dependency updates. When the
+issue queue needs explicit readiness and delivery state, configure the separate
+[issue workflow Project](project-workflow.md) used by the repository's manual agent skills.
 
 ## Configure only what the project will use
 
@@ -65,8 +67,9 @@ project. Add a Project when the issue queue becomes difficult to prioritize in i
 milestones are not signs of maturity by themselves; unused coordination surfaces create more places to monitor.
 
 After applying a hosted setting, verify its behavior rather than relying on the saved configuration. Open a test
-pull request, confirm the expected checks appear, inspect the available merge methods, and confirm that Pages or
-private reporting is reachable through the repository interface.
+pull request, confirm the expected checks appear, inspect the available merge methods, exercise Project item
+transitions when configured, and confirm that Pages or private reporting is reachable through the repository
+interface.
 
 ## Official documentation
 
