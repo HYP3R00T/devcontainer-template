@@ -48,7 +48,8 @@ Do not keep template guidance that is false for the resulting project. Do not ad
 3. Add only the runtime and dependencies required by the first accepted increment.
 4. Expose repeatable development commands through Mise.
 5. Add focused checks for the chosen stack and call the same commands from CI.
-6. Configure the hosted GitHub settings described in [GitHub setup](github/index.md).
+6. Configure the hosted GitHub settings described in [GitHub setup](github/index.md), including the issue workflow
+   Project when the derived repository will use the bundled delivery skills.
 7. Rebuild the container from a clean checkout and follow the onboarding instructions as a newcomer would.
 
 ## Know when adaptation is complete
