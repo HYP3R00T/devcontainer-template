@@ -18,13 +18,11 @@ jobs:
   repository-checks:
     name: Repository checks
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-
       - name: Run prek checks
         uses: j178/prek-action@v2
         with:
