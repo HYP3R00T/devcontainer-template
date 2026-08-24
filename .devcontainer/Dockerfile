@@ -6,8 +6,8 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        python3 \
-        tmux \
+    python3 \
+    tmux \
     && rm -rf /var/lib/apt/lists/*
 
 # Make sure mise is activated in both zsh and bash. This may be overridden by user dotfiles.
